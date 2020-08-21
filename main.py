@@ -1,26 +1,31 @@
-from tkinter import *
+import tkinter as tk
+from tkinter import messagebox
+from tkinter.tix import Balloon
 from tkinter.ttk import *
-from random_functions import *
+import RandomClasses
 
-root = Tk()
-root.grid()
+quotes = RandomClasses
 
-root.geometry('1000x700')
+tk.Label(text = 'The Gang', font = ('Comic Sans', 15)).grid(row=0, column=1)
 
-Label(root, text = 'The Gang', font = ('Comic Sans', 15)).pack(side = TOP, pady = 10)
+photo_Luke = tk.PhotoImage( file = "D:\\Pictures\\People\\TheBoi.png")
+photo_Thomas = tk.PhotoImage(file = "D:\\Pictures\\People\\thomas.png")
+photo_Hobbs = tk.PhotoImage(file = "D:\\Pictures\\People\\Hobbs.png")
+photo_Nowlin = tk.PhotoImage(file = "D:\\Pictures\\People\\nowlin.png")
+photo_Stonks = tk.PhotoImage(file = "D:\\Pictures\\People\\StonksBoi.png")
+photo_Kang = tk.PhotoImage(file = "D:\\Pictures\\People\\kang.png")
 
+btn_Luke = tk.Button(image = photo_Luke, command = quotes.action_Luke).grid(row=1, column=0, padx = 10, pady = 10)
+btn_Thomas = tk.Button(image = photo_Thomas, command = quotes.action_Thomas).grid(row=1, column=1, padx = 10, pady = 10)
+btn_Hobbs = tk.Button(image = photo_Hobbs, command = quotes.action_Hobbs).grid(row=1, column=2, padx = 10, pady = 10)
+btn_Nowlin = tk.Button(image = photo_Nowlin, command = quotes.action_Nowlin).grid(row=2, column=0, padx = 10, pady = 10)
+btn_Stonks = tk.Button(image = photo_Stonks, command = quotes.action_Stonks).grid(row=2, column=1, padx = 10, pady = 10)
+btn_Kang = tk.Button(image = photo_Kang, command = quotes.action_Kang).grid(row=2, column=2, padx = 10, pady = 10)
 
-photo_Luke = PhotoImage( file = "D:\Pictures\People\\TheBoi.png")
-photo_Thomas = PhotoImage(file = "D:\Pictures\People\\thomas.png")
-photo_Hobbs = PhotoImage(file = "D:\Pictures\People\\Hobbs.png")
-photo_Nowlin = PhotoImage(file = "D:\Pictures\People\\nowlin.png")
-photo_Stonks = PhotoImage(file = "D:\Pictures\People\\StonksBoi.png")
+messagebox.showinfo("Welcome!","Welcome to my program!")
 
-btn_Luke = Button(root, image = photo_Luke, command = action_Luke).pack(side = BOTTOM)
-btn_Thomas = Button(root, image = photo_Thomas, command = action_Thomas).pack(side = LEFT)
-btn_Hobbs = Button(root, image = photo_Hobbs, command = action_Hobbs).pack(side = LEFT)
-btn_Nowlin = Button(root, image = photo_Nowlin, command = action_Nowlin).pack(side = LEFT)
-btn_Stonks = Button(root, image = photo_Stonks, command = action_Stonks).pack(side = BOTTOM)
+#balloon = Balloon(bg="white", title = "help")
+#balloon.bind_widget(btn_Luke, baloonmsg = "HELP!! I'm being misquoted!")
 
-root.mainloop()
+tk.mainloop()
 
